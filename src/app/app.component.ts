@@ -44,7 +44,6 @@ export class AppComponent implements OnInit{
     this.api.getProduct()
     .subscribe({
       next:(res)=>{
-      //console.log(res);devtools, kiírja az összes adatot
       this.dataSource = new MatTableDataSource(res);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;

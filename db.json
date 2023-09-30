@@ -23,6 +23,30 @@
       "price": 10,
       "date": "2023-09-13T22:00:00.000Z",
       "id": 3
+    },
+    {
+      "productName": "carrot",
+      "category": "Vegetables",
+      "quality": "first",
+      "price": 5,
+      "date": "2023-09-29T22:00:00.000Z",
+      "id": 4
+    },
+    {
+      "productName": "beef",
+      "category": "Meats",
+      "quality": "second",
+      "price": 16,
+      "date": "2023-09-29T22:00:00.000Z",
+      "id": 5
+    },
+    {
+      "productName": "banana",
+      "category": "Fruits",
+      "quality": "first",
+      "price": 3,
+      "date": "2023-09-29T22:00:00.000Z",
+      "id": 6
     }
   ]
 }

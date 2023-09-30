@@ -21,8 +21,6 @@ export class DialogComponent implements OnInit{
     private dialogRef: MatDialogRef<DialogComponent>,
   ){}
    
-    //@Inject(MAT_DIALOG_DATA) public editData: any){}
-
   ngOnInit(): void {
     this.productForm = this.formBuilder.group({
       productName: ['',Validators.required],
@@ -32,7 +30,6 @@ export class DialogComponent implements OnInit{
       date: ['',Validators.required]
     });
 
-    // adott sor adata betöltődik a formba.
     if(this.editData){
       this.actionBtn = "Update";
       this.productForm.controls['productName'].setValue(this.editData.productName);
@@ -41,18 +38,14 @@ export class DialogComponent implements OnInit{
       this.productForm.controls['price'].setValue(this.editData.price);
       this.productForm.controls['date'].setValue(this.editData.date);
     }
-
-    //console.log(this.editData);//az adott sor adatát adja meg az edit gombra kattintva
   }
 
   addProduct(){
-  //console.log(this.productForm.value); devtools/consolba kiírja a formba beírt értékeket
    if(!this.editData){
      if(this.productForm.value){
       this.api.postProduct(this.productForm.value)
       .subscribe({
-        next:(response)=>{ //bekerül az adat a db.json-ba
-          console.log('res',response)
+        next:(response)=>{ 
           alert("Product added!")
           this.productForm.reset();
           this.dialogRef.close('save');
